@@ -74,7 +74,7 @@
 
 <script type="text/javascript">
 	let shipping = '{{ order.shipping }}';
-	let total = '{{ order.get_cart_total }}';
+	let total = '{{ order.get_cart_total|floatformat:2 }}';
 
 	if (shipping === 'False') {
 		document.getElementById('shipping-info').innerHTML = "";
@@ -149,6 +149,10 @@
 		.then((data) => {
 			console.log('Success:', data);
 			alert('Transaction completed');
+
+			cart = {};
+			document.cookie = 'cart=' + JSON.stringify(cart) + ";domain=;path=/";
+
 			window.location.href = "{% url 'store' %}"
 		});
 
