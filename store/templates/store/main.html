@@ -86,11 +86,11 @@
 	    <div class="form-inline my-2 my-lg-0">
 	    	{% if request.user.is_authenticated %}
 				<span class="hello-msg btn btn-success">Hello, {{ request.user }}</span>
-		    	<a href="#" class="btn btn-danger">Logout</a>
+		    	<a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
 	    	{% else %}
 	    		<span class="hello-msg btn btn-success">Hello, guest</span>
-	    		<a href="#" class="btn btn-warning">Login</a>
-	    		<a href="#" class="btn btn-info">Sign Up</a>
+	    		<a href="{% url 'login' %}" class="btn btn-warning">Login</a>
+	    		<a href="{% url 'register' %}" class="btn btn-info">Sign Up</a>
 	    	{% endif %}
 
 	    	<a href="{% url 'cart' %}">

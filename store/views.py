@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from .models import *
 import json
@@ -7,6 +7,8 @@ from .utils import cookieCart, cartData, guestOrder
 
 from django.db.models import F
 from django.core.paginator import Paginator
+from .forms import CreateUserForm
+from django.contrib.auth import logout 
 # Create your views here.
 
 def store(request):
@@ -127,15 +129,47 @@ def item(request, pk):
 	return render(request, 'store/item.html', context)
 
 
+
 def registerPage(request):
-	context = {}
+	data = cartData(request)
+	cartItems = data['cartItems']
+	form = CreateUserForm()
+
+	# if request.method == "POST":
+	# 	form = CreateUserForm(request.POST)
+	# 	if form.is_valid():
+	# 		user = form.save()
+	# 		username = form.cleaned_data.get('username')
+
+	# 		messages.success(request, 'Account was created for ' + username)
+
+	# 		return redirect('login')
+
+	context = {'form': form, 'cartItems': cartItems}
 	return render(request, 'store/register.html', context)
 
+
 def loginPage(request):
-	context = {}
+	data = cartData(request)
+	cartItems = data['cartItems']
+	# if request.method == "POST":
+	# 	username = request.POST.get('username')
+	# 	password = request.POST.get('password')
+
+	# 	user = authenticate(request, username=username, password=password)
+
+	# 	if user is not None:
+	# 		login(request, user)
+	# 		return redirect('home')
+	# 	else:
+	# 		messages.info(request, 'username OR password is incorrect')
+
+	context = {'cartItems': cartItems}
 	return render(request, 'store/login.html', context)
 
+
 def logoutUser(request):
+	logout(request)
 	return redirect('login')
 
 
