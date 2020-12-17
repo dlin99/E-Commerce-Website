@@ -127,5 +127,16 @@ def item(request, pk):
 	return render(request, 'store/item.html', context)
 
 
+def registerPage(request):
+	context = {}
+	return render(request, 'store/register.html', context)
+
+def loginPage(request):
+	context = {}
+	return render(request, 'store/login.html', context)
+
+def logoutUser(request):
+	return redirect('login')
+
 
 
