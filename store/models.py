@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+
+from PIL import Image 
 # Create your models here.
 
 
@@ -16,7 +18,7 @@ class Product(models.Model):
 	name = models.CharField(max_length=200)
 	price = models.DecimalField(max_digits=7, decimal_places=2)
 	digital = models.BooleanField(default=False, null=True, blank=True)
-	image = models.ImageField(null=True, blank=True)
+	image = models.ImageField(default='default.png')
 
 	count = models.IntegerField(null=True, default=0)
 	description = models.TextField(null=True)
@@ -31,7 +33,17 @@ class Product(models.Model):
 		except:
 			url = ''
 		return url
-	
+
+	def save(self):
+		super().save()
+
+		img = Image.open(self.image.path)
+
+		if img.height > 300 or img.width > 300:
+			output_size = (300, 300)
+			img.thumbnail(output_size)
+			img.save(self.image.path)
+
 
 
 class Order(models.Model):
