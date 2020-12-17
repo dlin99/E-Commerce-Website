@@ -4,6 +4,8 @@ from .models import *
 import json
 import datetime 
 from .utils import cookieCart, cartData, guestOrder
+
+from django.db.models import F
 # Create your views here.
 
 def store(request):
@@ -100,3 +102,23 @@ def processOrder(request):
 			)
 
 	return JsonResponse('Payment submitted...', safe=False)
+
+
+
+def item(request, pk):
+	data = cartData(request)
+	cartItems = data['cartItems']
+	order = data['order']
+	items = data['items']
+
+	product = Product.objects.get(id=pk)
+	product.count = F('count') + 1
+	product.save()
+	product.refresh_from_db()
+
+	context = {'product': product, 'cartItems': cartItems}
+	return render(request, 'store/item.html', context)
+
+
+
+
