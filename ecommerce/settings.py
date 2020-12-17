@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'store.apps.StoreConfig',
+    'sendemail.apps.SendemailConfig',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,9 @@ MEDIA_URL = '/images/'
 
 MEDIA_ROOT = BASE_DIR / 'static/images'
 
+
+
+
+# Setup send email
+DEFAULT_FROM_EMAIL = 'pocof445@gmail.com'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
