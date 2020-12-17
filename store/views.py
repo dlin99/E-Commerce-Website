@@ -8,7 +8,8 @@ from .utils import cookieCart, cartData, guestOrder
 from django.db.models import F
 from django.core.paginator import Paginator
 from .forms import CreateUserForm
-from django.contrib.auth import logout 
+from django.contrib.auth import logout, authenticate, login
+from django.contrib import messages
 # Create your views here.
 
 def store(request):
@@ -152,17 +153,18 @@ def registerPage(request):
 def loginPage(request):
 	data = cartData(request)
 	cartItems = data['cartItems']
-	# if request.method == "POST":
-	# 	username = request.POST.get('username')
-	# 	password = request.POST.get('password')
 
-	# 	user = authenticate(request, username=username, password=password)
+	if request.method == "POST":
+		username = request.POST.get('username')
+		password = request.POST.get('password')
 
-	# 	if user is not None:
-	# 		login(request, user)
-	# 		return redirect('home')
-	# 	else:
-	# 		messages.info(request, 'username OR password is incorrect')
+		user = authenticate(request, username=username, password=password)
+
+		if user is not None:
+			login(request, user)
+			return redirect('store')
+		else:
+			messages.info(request, 'username OR password is incorrect')
 
 	context = {'cartItems': cartItems}
 	return render(request, 'store/login.html', context)
