@@ -25,8 +25,6 @@ def store(request):
 
 	context = {'products': products, 'cartItems': cartItems, 'page_obj': page_obj}
 
-
-
 	return render(request, 'store/store.html', context)
 
 def cart(request):
