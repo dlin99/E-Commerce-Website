@@ -84,7 +84,14 @@
 	    </ul>
 
 	    <div class="form-inline my-2 my-lg-0">
-	    	<a href="#" class="btn btn-warning">Login</a>
+	    	{% if request.user.is_authenticated %}
+				<span class="hello-msg btn btn-success">Hello, {{ request.user }}</span>
+		    	<a href="#" class="btn btn-warning">Logout</a>
+	    	{% else %}
+	    		<span class="hello-msg btn btn-success">Hello, guest</span>
+	    		<a href="#" class="btn btn-warning">Login</a>
+	    		<a href="#" class="btn btn-info">Sign Up</a>
+	    	{% endif %}
 
 	    	<a href="{% url 'cart' %}">
 	    		<img id="cart-icon" src="{% static 'images/cart.png' %}">
