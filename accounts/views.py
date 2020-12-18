@@ -5,8 +5,9 @@ from .forms import CreateUserForm
 from django.contrib.auth import logout, authenticate, login
 from django.contrib import messages
 from store.utils import cookieCart, cartData, guestOrder
+from .decorators import unauthenticated_user
 
-
+@unauthenticated_user
 def registerPage(request):
 	data = cartData(request)
 	cartItems = data['cartItems']
@@ -25,7 +26,7 @@ def registerPage(request):
 	context = {'form': form, 'cartItems': cartItems}
 	return render(request, 'accounts/register.html', context)
 
-
+@unauthenticated_user
 def loginPage(request):
 	data = cartData(request)
 	cartItems = data['cartItems']
