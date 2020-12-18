@@ -12,15 +12,15 @@ def registerPage(request):
 	cartItems = data['cartItems']
 	form = CreateUserForm()
 
-	# if request.method == "POST":
-	# 	form = CreateUserForm(request.POST)
-	# 	if form.is_valid():
-	# 		user = form.save()
-	# 		username = form.cleaned_data.get('username')
+	if request.method == "POST":
+		form = CreateUserForm(request.POST)
+		if form.is_valid():
+			user = form.save()
+			username = form.cleaned_data.get('username')
 
-	# 		messages.success(request, 'Account was created for ' + username)
+			messages.success(request, 'Account was created for ' + username)
 
-	# 		return redirect('login')
+			return redirect('login')
 
 	context = {'form': form, 'cartItems': cartItems}
 	return render(request, 'accounts/register.html', context)
