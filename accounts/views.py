@@ -2,11 +2,12 @@ from django.shortcuts import render, redirect, reverse
 
 # Create your views here.
 from .forms import CreateUserForm, CustomerForm
-from django.contrib.auth import logout, authenticate, login
+from django.contrib.auth import logout, authenticate, login, update_session_auth_hash
 from django.contrib import messages
 from store.utils import cookieCart, cartData, guestOrder
 from .decorators import unauthenticated_user
 from django.contrib.auth.decorators import login_required 
+from django.contrib.auth.forms import PasswordChangeForm
 
 @unauthenticated_user
 def registerPage(request):
@@ -112,3 +113,23 @@ def userOrdersDetail(request, pk):
 	print(orderItems)
 	context = {'cartItems': cartItems, 'orderItems': orderItems}
 	return render(request, 'accounts/user_orders_detail.html', context)
+
+@login_required(login_url='login')
+def changePassword(request):
+    data = cartData(request)
+    cartItems = data['cartItems']
+
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)  # Important!
+            messages.success(request, 'Your password was successfully updated!')
+            return redirect('change-password')
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+        form = PasswordChangeForm(request.user)
+    
+    context = {'form': form, 'cartItems': cartItems}
+    return render(request, 'accounts/change_password.html', context)
