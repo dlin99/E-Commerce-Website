@@ -2,14 +2,44 @@
 {% load static %}
 {% block content %}
 
-	<br>
+<!-- 	<br>
 	<h1>Contact Us</h1>
 	<form method="post">
 	    {% csrf_token %}
 	    {{ form.as_p }}
+
 	    <div class="form-actions">
 	      <button type="submit" class="btn btn-primary">Send</button>
 	    </div>
 	</form>
+ -->
+
+	<br>
+	<div class="col-md-6">
+		<div class="card card-body">
+
+			<h2>Contact Us</h2>
+			<hr>
+			<form method="post">
+			  {% csrf_token %}
+
+			  <div class="form-group">
+			    <label for=""><h5>Your Email:</h5> </label>
+			    {{ form.from_email }}
+			  </div>
+			  <div class="form-group">
+			    <label for=""><h5>Subject:</h5> </label>
+			    {{ form.subject }}
+			  </div>
+			  <div class="form-group">
+			    <label for=""><h5>Message:</h5> </label>
+			    <p>{{ form.message }}</p>
+			  </div>
+
+			  <button type="submit" class="btn btn-primary">Send</button>
+			</form>
+
+		</div>
+	</div>
 
 {% endblock %}
