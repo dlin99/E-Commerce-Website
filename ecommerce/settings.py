@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'store.apps.StoreConfig',
     'sendemail.apps.SendemailConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [

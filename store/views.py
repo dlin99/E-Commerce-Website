@@ -7,9 +7,7 @@ from .utils import cookieCart, cartData, guestOrder
 
 from django.db.models import F
 from django.core.paginator import Paginator
-from .forms import CreateUserForm
-from django.contrib.auth import logout, authenticate, login
-from django.contrib import messages
+
 # Create your views here.
 
 def store(request):
@@ -128,51 +126,4 @@ def item(request, pk):
 
 	context = {'product': product, 'cartItems': cartItems}
 	return render(request, 'store/item.html', context)
-
-
-
-def registerPage(request):
-	data = cartData(request)
-	cartItems = data['cartItems']
-	form = CreateUserForm()
-
-	# if request.method == "POST":
-	# 	form = CreateUserForm(request.POST)
-	# 	if form.is_valid():
-	# 		user = form.save()
-	# 		username = form.cleaned_data.get('username')
-
-	# 		messages.success(request, 'Account was created for ' + username)
-
-	# 		return redirect('login')
-
-	context = {'form': form, 'cartItems': cartItems}
-	return render(request, 'store/register.html', context)
-
-
-def loginPage(request):
-	data = cartData(request)
-	cartItems = data['cartItems']
-
-	if request.method == "POST":
-		username = request.POST.get('username')
-		password = request.POST.get('password')
-
-		user = authenticate(request, username=username, password=password)
-
-		if user is not None:
-			login(request, user)
-			return redirect('store')
-		else:
-			messages.info(request, 'username OR password is incorrect')
-
-	context = {'cartItems': cartItems}
-	return render(request, 'store/login.html', context)
-
-
-def logoutUser(request):
-	logout(request)
-	return redirect('login')
-
-
 
