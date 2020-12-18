@@ -3,7 +3,7 @@
 {% block content %}
 
 
-	<div class="container">
+<!-- 	<div class="container">
 		<div class="row">
 
 
@@ -25,10 +25,35 @@
 
 	    	</div>
 
-	    	<!-- You can put ADs on the right hand side of the column -->
+
 
 	  </div>
 	</div>
+
+
+ -->
+<br>
+<div class="row">
+	<div class="col-md-4">
+		<div class="card card-body">
+			<a class="btn btn-outline-info" href="{% url 'store' %}">&#8592; Back to Shop</a>
+			<hr>
+			<h3 style="text-align: center">{{ product.name }}</h3>
+			<hr>
+			<img src="{{ product.imageURL }}" alt="product-image">
+		
+		</div>
+	</div>
+	<div class="col-md-8">
+		<div class="card card-body">
+				<p><strong>Viewd</strong>: {{ product.count }} times</p>
+				<p><strong>Description</strong>: {{product.description|linebreaks}}</p>
+				<p><strong>Price</strong>: ${{ product.price }}</p>
+	    		<p><button data-product={{ product.id }} data-action="add" class="btn btn-success add-btn update-cart">Add to Cart</button></p>
+		</div>
+	</div>
+</div>
+
 
 
 {% endblock content %}
