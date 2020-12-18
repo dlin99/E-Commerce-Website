@@ -77,6 +77,22 @@
 	        <a class="nav-link" href="{% url 'store' %}">Store <span class="sr-only">(current)</span></a>
 	      </li>
 
+	      {% if request.user.is_authenticated %}
+		      <li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          My Account
+		        </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+		          <a class="dropdown-item" href="{% url 'user-page' %}">Profile</a>
+		          <a class="dropdown-item" href="{% url 'user-page-update' %}">Update Profile</a>
+		          <a class="dropdown-item" href="{% url 'user-orders' %}">My Orders</a>
+		          <a class="dropdown-item" href="#">Change Password</a>
+		        </div>
+		      </li>
+	      {% endif %}
+
+
+
 	      <li class="nav-item">
 	        <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
 	      </li>
