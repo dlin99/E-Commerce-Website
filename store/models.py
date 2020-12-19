@@ -25,8 +25,8 @@ class Product(models.Model):
 			url = ''
 		return url
 
-	def save(self):
-		super().save()
+	def save(self, *args, **kwargs):
+		super().save(*args, **kwargs)
 
 		img = Image.open(self.image.path)
 
