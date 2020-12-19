@@ -23,16 +23,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'vx8x*8z-&r9(*3u!p^km60aj^(q$zkese9to7*60#*%+c8qpa&'
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = 'vx8x*8z-&r9(*3u!p^km60aj^(q$zkese9to7*60#*%+c8qpa&'
+# SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True 
 # DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
 
-# ALLOWED_HOSTS = [] # for development
-ALLOWED_HOSTS = ['dlin99djangoapp.herokuapp.com']
+ALLOWED_HOSTS = [] # for development
+# ALLOWED_HOSTS = ['dlin99djangoapp.herokuapp.com']
 
 
 # Application definition
@@ -146,12 +146,12 @@ DEFAULT_FROM_EMAIL = 'pocof445@gmail.com'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = 'True' 
-# EMAIL_HOST_USER = '********'
-# EMAIL_HOST_PASSWORD = '********' # change to *** before uploading
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = 'True' 
+EMAIL_HOST_USER = '******'
+EMAIL_HOST_PASSWORD = '******' # change to *** before uploading
 
 
 # for deployment on heroku, setting static root (collect static files)

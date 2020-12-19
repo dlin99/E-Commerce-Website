@@ -74,6 +74,10 @@ def updateItem(request):
 
 	return JsonResponse('Item was added', safe=False)
 
+# add confirmation email functionality
+from django.core.mail import EmailMessage
+from django.conf import settings
+from django.template.loader import render_to_string
 
 def processOrder(request):
 	transaction_id = datetime.datetime.now().timestamp()
@@ -108,6 +112,18 @@ def processOrder(request):
 			state=data['shipping']['state'],
 			zipcode=data['shipping']['zipcode']
 			)
+
+	template = render_to_string('store/confirmation_email.html', {'name': customer.name})
+
+	email = EmailMessage(
+		'Thanks for purchasing products from our website!',
+		template,
+		settings.EMAIL_HOST_USER,
+		[customer.email],
+		)
+
+	email.fail_silently=False
+	email.send()
 
 	return JsonResponse('Payment submitted...', safe=False)
 
