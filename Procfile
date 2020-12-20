@@ -1,2 +1,2 @@
 web: gunicorn ecommerce.wsgi
-worker: celery worker --ecommerce=tasks.ecommerce
+worker: celery -A ecommerce.tasks worker --loglevel=info --concurrency=1
