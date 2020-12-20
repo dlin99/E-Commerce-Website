@@ -178,7 +178,7 @@ django_heroku.settings(locals())
 
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-# CELERY_BROKER_URL = config('CELERY_BROKER_URL')
+CELERY_BROKER_URL = config('CELERY_BROKER_URL')
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER ='json'
 
