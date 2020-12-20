@@ -25,15 +25,16 @@ class Product(models.Model):
 			url = ''
 		return url
 
-	def save(self, *args, **kwargs):
-		super().save(*args, **kwargs)
+	# #Comment out this due to AWS S3 (use AWS lambda function)
+	# def save(self, *args, **kwargs):
+	# 	super().save(*args, **kwargs)
 
-		img = Image.open(self.image.path)
+	# 	img = Image.open(self.image.path)
 
-		if img.height > 300 or img.width > 300:
-			output_size = (300, 300)
-			img.thumbnail(output_size)
-			img.save(self.image.path)
+	# 	if img.height > 300 or img.width > 300:
+	# 		output_size = (300, 300)
+	# 		img.thumbnail(output_size)
+	# 		img.save(self.image.path)
 
 
 
