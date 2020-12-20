@@ -1,2 +1,2 @@
 web: gunicorn ecommerce.wsgi
-worker: celery worker --app=tasks.app
+worker: celery worker --ecommerce=tasks.ecommerce
