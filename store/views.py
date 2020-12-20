@@ -115,7 +115,7 @@ def processOrder(request):
 			zipcode=data['shipping']['zipcode']
 			)
 
-	send_confirmation_email.delay(customer)
+	send_confirmation_email.delay(customer.name, customer.email)
 
 	# template = render_to_string('store/confirmation_email.html', {'name': customer.name})
 
