@@ -16,7 +16,7 @@
 # Functions:
 - Shopping:
   - Purchase products as a logged in or a guest user.
-  ![image](https://github.com/dlin99/E-Commerce-Website/blob/main/readme_images/cart.png)
+  ![image](readme_images/cart.png)
 - Logged In User:
   - Login and Signup Pages
   - Forget Password, Reset via Email
