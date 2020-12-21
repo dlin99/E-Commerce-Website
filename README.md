@@ -19,26 +19,40 @@
   ![image](readme_images/cart.png)
 - Logged In User:
   - Login and Signup Pages
+  ![image](readme_images/login_signup_pages.png)
   - Forget Password, Reset via Email
+  ![image](readme_images/reset_password1.png)
+  ![image](readme_images/reset_password2.png)
+  ![image](readme_images/reset_password3.png)
   - Change Password
+  ![image](readme_images/change_password.png)
   - Profile/Change Profile Pages
+  ![image](readme_images/profile.png)
   - My Orders Page/Order Details
-  ![image](https://github.com/dlin99/E-Commerce-Website/blob/main/readme_images/signup.png)
+  ![image](readme_images/my_orders.png)
+  ![image](readme_images/order_detail.png) 
 - Homepage:
   - Show all the products with pagination (6 items per page)
+  ![image](readme_images/homepage.png)
 - Product Page:
   - Show the details of individual product
+  ![image](readme_images/product.png)
 - Cart Page:
   - Show all the items in your shopping cart
+  ![image](readme_images/cart.png)
 - Checkout:
-  - Use Paypal API to handle the payment 
+  - Use Paypal API to handle the payment
+  ![image](readme_images/checkout.png)
+  ![image](readme_images/paypal.png)
   - Confirmation Email will be sent after payment
+  ![image](read_images/confirmation_email.png)
   - Use Celery + Redis to handle the process of sending confirmation emails
 - Contact Us:
   - Send email to us
+  ![image](read_images/contact_us.png)  
 - NavBar:
   - Search bar for finding certain products
-
+  ![image](read_images/search_bar.png)
 
 # To use:
 1. git clone this repository to your computer
