@@ -22,7 +22,7 @@
   - Forget Password, Reset via Email
   - Change Password
   - Profile/Change Profile Pages
-  - My Orders Page
+  - My Orders Page/Order Details
   ![image](https://github.com/dlin99/E-Commerce-Website/blob/main/demo/signup.png)
 - Homepage:
   - Show all the products with pagination (6 items per page)
