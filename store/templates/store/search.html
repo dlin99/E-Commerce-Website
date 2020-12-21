@@ -33,7 +33,7 @@
 				{% for result in results %}
 					<div class="cart-row">
 						<div style="flex:2"><img class="row-image" src="{{ result.imageURL }}"></div>
-						<div style="flex:1"><p>{{ result.name }}</p></div>
+						<div style="flex:1"><p><a class="text-secondary" href="{% url 'item' result.id %}">{{ result.name }}</a></p></div>
 						<div style="flex:1"><p>${{ result.price|floatformat:2 }}</p></div>
 						<div style="flex:1"><p>{{ result.digital }}</p></div>
 						<div style="flex:2"><p>{{ result.description }}</p></div>

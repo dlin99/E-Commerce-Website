@@ -1,8 +1,7 @@
 # E-Commerce-Website 
 - E-commerce Website built with django
-- Use Django, Bootstrap, PostgreSQL, Celery, Redis and Deploy on Heroku with AWS S3
+- Use Django, Bootstrap, PostgreSQL, Celery, Redis and Deploy on Heroku with AWS S3 storage
 - Live Deployment: https://dlin99-django-ecommerce.herokuapp.com/
-
 
 
 # Tech & Tools:
@@ -10,7 +9,35 @@
 2. Frontend: Bootstrap 4.3.1 
 3. Database: Postgresql
 4. Storage: AWS S3
-5. Asnychronous 
+5. Asynchronous Tasks: Celery + Redis
+6. Payment: Paypal (Sandbox)
+
+# Functions:
+- Shopping:
+  - Purchase products as a logged in or a guest user.
+  ![image](https://github.com/dlin99/E-Commerce-Website/blob/main/demo/login.png)
+- Logged In User:
+  - Login and Signup Pages
+  - Forget Password, Reset via Email
+  - Change Password
+  - Profile/Change Profile Pages
+  - My Orders Page
+  ![image](https://github.com/dlin99/E-Commerce-Website/blob/main/demo/signup.png)
+- Homepage:
+  - Show all the products with pagination (6 items per page)
+- Product Page:
+  - Show the details of individual product
+- Cart Page:
+  - Show all the items in your shopping cart
+- Checkout:
+  - Use Paypal API to handle the payment 
+  - Confirmation Email will be sent after payment
+  - Use Celery + Redis to handle the process of sending confirmation emails
+- Contact Us:
+  - Send email to us
+- NavBar:
+  - Search bar for finding certain products
+
 
 # To use:
 1. git clone this repository to your computer
