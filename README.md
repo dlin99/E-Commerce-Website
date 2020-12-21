@@ -1,6 +1,7 @@
 # E-Commerce-Website 
 - E-commerce Website built with django
-- Use Django, Bootstrap, PostgreSQL, Celery, Redis and Deploy on Heroku with AWS S3 storage
+- Use Django, Bootstrap, PostgreSQL, Celery, Redis
+- Deploy on Heroku with AWS S3 storage
 - Live Deployment: https://dlin99-django-ecommerce.herokuapp.com/
 
 
@@ -10,7 +11,7 @@
 3. Database: Postgresql
 4. Storage: AWS S3
 5. Asynchronous Tasks: Celery + Redis
-6. Payment: Paypal (Sandbox)
+6. Payment: Paypal API (Sandbox)
 
 # Functions:
 - Shopping:
