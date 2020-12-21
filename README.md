@@ -14,9 +14,8 @@
 6. Payment: Paypal API (Sandbox)
 
 # Functions:
-- Shopping:
+- User:
   - Purchase products as a logged in or a guest user.
-  ![image](readme_images/cart.png)
 - Logged In User:
   - Login and Signup Pages
   ![image](readme_images/login_signup_pages.png)
