@@ -1,7 +1,9 @@
 # E-Commerce-Website 
-eCommerce website built with django <br>
-Project for the Course taught by Dennis Ivy. <br>
-(https://www.youtube.com/playlist?list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng)
+- E-commerce Website built with django
+- Use Django, Bootstrap, PostgreSQL, Celery, Redis and Deploy on Heroku with AWS S3
+- Live Deployment: https://dlin99-django-ecommerce.herokuapp.com/
+
+
 
 # Tech & Tools:
 1. Backend: Django 3.1.3
@@ -18,3 +20,7 @@ Project for the Course taught by Dennis Ivy. <br>
 5. `python manage.py migrate`
 6. `python manage.py createsuperuser`
 7. run http://localhost:8000/
+
+
+# Reference:
+1. Project for the Course taught by Dennis Ivy. (https://www.youtube.com/playlist?list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng)
