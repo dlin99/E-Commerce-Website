@@ -6,7 +6,9 @@ Project for the Course taught by Dennis Ivy. <br>
 # Tech & Tools:
 1. Backend: Django 3.1.3
 2. Frontend: Bootstrap 4.3.1 
-3. Database: SQLite
+3. Database: Postgresql
+4. Storage: AWS S3
+5. Asnychronous 
 
 # To use:
 1. git clone this repository to your computer

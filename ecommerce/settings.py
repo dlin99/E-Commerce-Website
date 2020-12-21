@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     'sendemail.apps.SendemailConfig',
     'accounts.apps.AccountsConfig',
 
+    'django_filters',
+
     'storages',
 ]
 

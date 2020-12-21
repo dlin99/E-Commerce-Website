@@ -8,6 +8,7 @@ from .utils import cookieCart, cartData, guestOrder
 from django.db.models import F
 from django.core.paginator import Paginator
 
+from .filters import ProductFilter
 # Create your views here.
 
 def store(request):
@@ -147,3 +148,19 @@ def item(request, pk):
 	context = {'product': product, 'cartItems': cartItems}
 	return render(request, 'store/item.html', context)
 
+
+def search(request):
+	data = cartData(request)
+	cartItems = data['cartItems']
+
+	products = Product.objects.all()
+	myFilter = ProductFilter(request.GET, queryset=products)
+	results = myFilter.qs 
+
+
+	context = {
+			'cartItems': cartItems,
+			'myFilter':myFilter,
+			'results': results
+			 }
+	return render(request, 'store/search.html', context)

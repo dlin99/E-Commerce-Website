@@ -1,0 +1,23 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+			<form method="get">
+
+				<!-- {{ myFilter.form.name.label }}:  -->{{ myFilter.form.name }}
+
+
+		    <button class="btn btn-primary" type="submit">Search</button>
+		  </form>
+
+
+
+				{% for result in results %}
+
+					<tr>
+						<td>{{ result.name }}</td>
+
+					</tr><br>
+				{% endfor %}
+
+
+{% endblock content %}

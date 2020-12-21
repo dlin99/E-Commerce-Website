@@ -12,4 +12,6 @@ urlpatterns = [
 
     path('<int:pk>/', views.item, name='item'),
 
+
+    path('search/', views.search, name='search-page')
 ]

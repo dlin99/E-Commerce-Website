@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load store_extras %}
 {% load static %}
 <html>
 <head>
@@ -97,17 +98,41 @@
 	        <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
 	      </li>
 
+
+	      <li class="nav-item">  
+   	 		<form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'search-page' %}">
+<!--      		 <input class="form-control mr-sm-2" type="search" placeholder="Search Product" aria-label="Search"> -->
+			<span class="mr-sm-2">{% myfilter_search %}</span>
+     		 
+    		  <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+    		</form>
+		  </li>
+
 	    </ul>
 
 	    <div class="form-inline my-2 my-lg-0">
-	    	{% if request.user.is_authenticated %}
+<!-- 	    	{% if request.user.is_authenticated %}
 				<span class="hello-msg btn btn-success">Hello, {{ request.user }}</span>
 		    	<a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
 	    	{% else %}
 	    		<span class="hello-msg btn btn-success">Hello, guest</span>
 	    		<a href="{% url 'login' %}" class="btn btn-warning">Login</a>
 	    		<a href="{% url 'register' %}" class="btn btn-info">Sign Up</a>
+	    	{% endif %} -->
+
+	    	{% if request.user.is_authenticated %}
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item"><a class="nav-link hello-msg" href="#">Hello, {{ request.user }}</a></li>
+					<li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+				</ul>
+	    	{% else %}
+			    <ul class="navbar-nav mr-auto">
+			      <li class="nav-item"><a class="nav-link hello-msg" href="#">Hello Guest</a></li>
+			      <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+			      <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Sign Up</a></li>
+			    </ul>
 	    	{% endif %}
+
 
 	    	<a href="{% url 'cart' %}">
 	    		<img id="cart-icon" src="{% static 'images/cart.png' %}">
@@ -115,9 +140,10 @@
 	    	<p id="cart-total">{{ cartItems }}</p>
 	    </div>
 
-
 	  </div>
 	</nav>
+
+	<br>
 
 	<div class="container">
 		{% block content %}

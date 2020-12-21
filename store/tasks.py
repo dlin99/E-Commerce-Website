@@ -4,8 +4,6 @@ from django.core.mail import EmailMessage
 from django.conf import settings
 from django.template.loader import render_to_string
 
-
-
 @shared_task
 def send_confirmation_email(customer_name, customer_email):
 
