@@ -164,3 +164,4 @@ def search(request):
 			'results': results
 			 }
 	return render(request, 'store/search.html', context)
+

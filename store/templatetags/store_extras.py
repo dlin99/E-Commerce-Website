@@ -12,3 +12,15 @@ def myfilter_search():
 	myFilter = ProductFilter(queryset=products)
 
 	return {'myFilterSearchBar': myFilter}
+
+
+# from .. utils import cartData
+
+# @register.inclusion_tag('store/main.html')
+# def cartItems(request):
+# 	data = cartData(request)
+# 	cartItems = data['cartItems']
+
+# 	return {'cartItems': cartItems}
+
+ 
