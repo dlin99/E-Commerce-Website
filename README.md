@@ -45,14 +45,14 @@
   ![image](readme_images/checkout.png)
   ![image](readme_images/paypal.png)
   - Confirmation Email will be sent after payment
-  ![image](read_images/confirmation_email.png)
+  ![image](readme_images/confirmation_email.png)
   - Use Celery + Redis to handle the process of sending confirmation emails
 - Contact Us:
   - Send email to us
-  ![image](read_images/contact_us.png)  
+  ![image](readme_images/contact_us.png)  
 - NavBar:
   - Search bar for finding certain products
-  ![image](read_images/search_bar.png)
+  ![image](readme_images/search_bar.png)
 
 # To use:
 1. git clone this repository to your computer
