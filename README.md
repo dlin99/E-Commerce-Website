@@ -16,14 +16,14 @@
 # Functions:
 - Shopping:
   - Purchase products as a logged in or a guest user.
-  ![image](https://github.com/dlin99/E-Commerce-Website/blob/main/demo/login.png)
+  ![image](https://github.com/dlin99/E-Commerce-Website/blob/main/readme_images/cart.png)
 - Logged In User:
   - Login and Signup Pages
   - Forget Password, Reset via Email
   - Change Password
   - Profile/Change Profile Pages
   - My Orders Page/Order Details
-  ![image](https://github.com/dlin99/E-Commerce-Website/blob/main/demo/signup.png)
+  ![image](https://github.com/dlin99/E-Commerce-Website/blob/main/readme_images/signup.png)
 - Homepage:
   - Show all the products with pagination (6 items per page)
 - Product Page:
