@@ -7,11 +7,9 @@
 
 # Tech & Tools:
 1. Backend: Django 3.1.3
-2. Frontend: Bootstrap 4.3.1 
-3. Database: Postgresql
-4. Storage: AWS S3
-5. Asynchronous Tasks: Celery + Redis
-6. Payment: Paypal API (Sandbox)
+2. Deployment: Heroku + AWS S3
+3. Asynchronous Tasks: Celery + Redis
+4. Payment: Paypal API (Sandbox)
 
 # Functions:
 - User:
@@ -53,15 +51,6 @@
   - Search bar for finding certain products
   ![image](readme_images/search_bar.png)
 
-# To use:
-1. git clone this repository to your computer
-2. `python3 -m venv venv`
-3. `. venv/bin/activate`
-4. `pip install -r requirements.txt`
-5. `python manage.py migrate`
-6. `python manage.py createsuperuser`
-7. run http://localhost:8000/
-
 
 # Reference:
-1. Project for the Course taught by Dennis Ivy. (https://www.youtube.com/playlist?list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng)
+1. Django Ecommerce Website. (https://www.youtube.com/playlist?list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng)
