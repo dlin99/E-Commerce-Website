@@ -9,37 +9,20 @@
 
  - User model and UserCreationForm
 ```python
-
 from django.contrib.auth.models import User 
 from django.contrib.auth.forms import UserCreationForm
 
-
 ```
 
+ - ModelForm
+```python
+from django.forms import ModelForm
 
-
-
-
-
-
-- E-commerce Website built with django
-- Use Django, Bootstrap, PostgreSQL, Celery, Redis
-- Deploy on Heroku with AWS S3 storage
-- Live Deployment: https://dlin99-django-ecommerce.herokuapp.com/
-
+# form for changing customer information
+class CustomerForm(ModelForm):
+	class Meta:
+		model = Customer
+		fields = '__all__'
+		exclude = ['user']
 ```
-{
-    "author": {
-        "email": "admin@example.com",
-        "first_name": "",
-        "last_name": "",
-        "username": "admin"
-    },
-    "content": "children comment 2 - update",
-    "content_object_url": "/api/posts/you-wont-believe-these-clickbait-titles/",
-    "id": 63,
-    "replies": null,
-    "reply_count": 0,
-    "timestamp": "2020-12-25T09:59:05.143859Z"
-}
-```
+
